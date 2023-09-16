@@ -5,6 +5,27 @@ function displayCharts(id) {
 
     console.log(id)
 
+    // Read in data up here
+    d3.json(url).then(function(data) {
+
+        samples = data.samples;
+
+        console.log(samples);
+
+        // Filter the data to get the sample values, otu_ids and otu_labels for the selected ID
+
+        let selectedSample = samples.filter(sample => sample.id == id);
+
+        console.log(selectedSample);
+
+        otuIds = selectedSample[0].otu_ids;
+        otuLabels = selectedSample[0].otu_labels;
+        sampleValues = selectedSample[0].sample_values;
+
+        console.log(otuIds);
+
+    });
+
 }
 
 function optionChanged(selectedId) {
