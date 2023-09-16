@@ -24,6 +24,42 @@ function displayCharts(id) {
 
         console.log(otuIds);
 
+        // Bar chart
+        slicedIds = otuIds.slice(0, 10);
+        slicedLabels = otuLabels.slice(0, 10);
+        slicedValues = sampleValues.slice(0, 10);
+
+        reversedIds = slicedIds.reverse();
+        reversedLabels = slicedLabels.reverse();
+        reversedValues = slicedValues.reverse();
+
+        let names = reversedIds.map(row => 'OTU ' + row);
+
+        let trace1 = {
+            x: reversedValues,
+            y: names,
+            text: slicedLabels,
+            type: "bar",
+            orientation: "h"
+          };
+        
+        // Data trace array
+        let data2 = [trace1];
+        
+        // Apply the group barmode to the layout
+        let layout = {
+          title: "Top 10 Bacteria Cultures Found"
+        };
+        
+        // Render the plot to the div tag with id "plot"
+        Plotly.newPlot("bar", data2, layout);
+
+        // Bubble chart
+
+        // Demographic info panel
+        metadata = data.metadata;
+        let selectedMeta = metadata.filter(m => m.id == id);
+
     });
 
 }
