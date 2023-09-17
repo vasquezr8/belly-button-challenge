@@ -51,10 +51,31 @@ function displayCharts(id) {
           title: "Top 10 Bacteria Cultures Found"
         };
         
-        // Render the plot to the div tag with id "plot"
+        // Render the plot to the div tag with id "bar"
         Plotly.newPlot("bar", data2, layout);
 
         // Bubble chart
+        let trace2 = {
+            x: otuIds,
+            y: sampleValues,
+            text: otuLabels,
+            mode: 'markers',
+            marker: {
+                size: sampleValues,
+                color: otuIds
+            }
+          };
+        
+        // Data trace array
+        let data3 = [trace2];
+        
+        // Apply the group barmode to the layout
+        let layout2 = {
+          title: "Bacteria Cultures Per Sample"
+        };
+        
+        // Render the plot to the div tag with id "bubble"
+        Plotly.newPlot("bubble", data3, layout2);
 
         // Demographic info panel
         metadata = data.metadata;
