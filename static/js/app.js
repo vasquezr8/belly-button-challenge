@@ -81,6 +81,22 @@ function displayCharts(id) {
         metadata = data.metadata;
         let selectedMeta = metadata.filter(m => m.id == id);
 
+        let panel = d3.select(".panel panel-primary");
+
+        panel.attr("class", "table table-striped");
+
+        // Use D3 to select the panel body
+        let pbody = d3.select("panel-body");
+
+        // Append one table row `tr` to the table body - LOOKS GOOD
+        let prow = pbody.append("tr");
+
+        // Append one cell for the student name - NEEDS WORK
+        prow.append("td").text(newGrade[0]);
+
+        // Append one cell for the student grade - NEEDS WORK
+        row.append("td").text(newGrade[1]);
+
     });
 
 }
