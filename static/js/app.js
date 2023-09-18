@@ -93,6 +93,10 @@ function displayCharts(id) {
 
         console.log(metaValues);
 
+        for (const [key, value] of Object.entries(selectedMeta[0])) {
+            console.log(`${key}: ${value}`);
+        }
+
         // Use D3 to select the panel body
         let pbody = d3.select("#sample-metadata");
 
@@ -100,7 +104,11 @@ function displayCharts(id) {
         let prow = pbody.append("tr");
 
         // Append one cell for the student name - NEEDS WORK
-        prow.append("td").text(metaKeys);
+        prow.append("td").text(`${key}: ${value}`);
+
+        for (const [key, value] of Object.entries(selectedMeta[0])) {
+            prow.append("td").text(`${key}: ${value}`);
+        }
 
         // Append one cell for the student grade - NEEDS WORK
         prow.append("td").text(metaValues);
