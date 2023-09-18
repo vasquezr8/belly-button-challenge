@@ -85,17 +85,25 @@ function displayCharts(id) {
 
         panel.attr("class", "table table-striped");
 
+        let metaKeys = Object.keys(selectedMeta[0]);
+
+        console.log(metaKeys);
+
+        let metaValues = Object.values(selectedMeta[0]);
+
+        console.log(metaValues);
+
         // Use D3 to select the panel body
-        let pbody = d3.select("panel-body");
+        let pbody = d3.select("#sample-metadata");
 
         // Append one table row `tr` to the table body - LOOKS GOOD
         let prow = pbody.append("tr");
 
         // Append one cell for the student name - NEEDS WORK
-        prow.append("td").text(newGrade[0]);
+        prow.append("td").text(metaKeys);
 
         // Append one cell for the student grade - NEEDS WORK
-        row.append("td").text(newGrade[1]);
+        prow.append("td").text(metaValues);
 
     });
 
