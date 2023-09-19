@@ -46,7 +46,7 @@ function displayCharts(id) {
         // Data trace array
         let data2 = [trace1];
         
-        // Apply the group barmode to the layout
+        // Add title to the layout
         let layout = {
           title: "Top 10 Bacteria Cultures Found"
         };
@@ -62,14 +62,15 @@ function displayCharts(id) {
             mode: 'markers',
             marker: {
                 size: sampleValues,
-                color: otuIds
+                color: otuIds,
+                colorscale: "Earth"
             }
           };
         
         // Data trace array
         let data3 = [trace2];
         
-        // Apply the group barmode to the layout
+        // Add title to the layout
         let layout2 = {
           title: "Bacteria Cultures Per Sample"
         };
@@ -113,8 +114,8 @@ function init() {
     d3.json(url).then(function(data) {
 
         console.log(data);
+        
         // Fill the dropdown menu with all the IDs
-
         let dropdownMenu = d3.select("#selDataset");
 
         console.log(data.names);
