@@ -88,7 +88,10 @@ function displayCharts(id) {
         // Use D3 to select the panel body
         let pbody = d3.select("#sample-metadata");
 
-        // Append one table row `tr` to the table body - LOOKS GOOD
+        // Reset html so I can select new IDs
+        pbody.html("");
+
+        // Append row `tr` to the panel body for each key value pair
         let prow = pbody.append("tr");
 
         for (const [key, value] of Object.entries(selectedMeta[0])) {
