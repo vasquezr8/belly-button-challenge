@@ -1,7 +1,7 @@
 # belly-button-challenge
 Module 14 Challenge
 
-**Building an Interactive Dashboard**
+**Building an Interactive Dashboard with Javascript and HTML**
 
 **Code Citations:**
 
