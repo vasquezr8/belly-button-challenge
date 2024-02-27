@@ -1,5 +1,9 @@
 # Belly Button Biodiversity Dashboard
 
+## Deployment
+
+https://vasquezr8.github.io/belly-button-challenge/
+
 ## Background
 
 For this assignment, I built an interactive dashboard to explore the Belly Button Biodiversity dataset, which catalogs the microbes that colonize human navels. The dataset revealed that a small handful of microbial species, also known as operational taxonomic units (OTUs), were present in more than 70% of people, while the rest were relatively rare.
@@ -23,10 +27,6 @@ To complete the assignment, I followed these steps:
 5. I displayed each key-value pair from the metadata JSON object on the page.
 6. All the plots update when a new sample is selected.
 7. Finally, I deployed my app to GitHub Pages.
-
-## Deployment
-
-https://vasquezr8.github.io/belly-button-challenge/
 
 ## Code Citations
 
